@@ -1,9 +1,23 @@
 var express = require('express');
 var router = express.Router();
+const photoControllers = require('../controllers/photo')
+const Helper = require('../helpers/upload')
+const upload = Helper.multer.single('image')
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', photoControllers.allPhotos)
+router.get('/:id', photoControllers.getPhoto)
+router.post('/', (req, res, lanjut) => {
+  console.log('MASUK GA INI')
+  upload(req, res, (err => {
+    if(!err) {
+      lanjut()
+    }
+  }))
+}, Helper.sendUploadToGCS, (req, res, next) => {
+  photoControllers.postPhoto(req, res, next)
+})
+router.put('/:id', photoControllers.editPhoto)
+router.delete('/:id', photoControllers.deletePhoto)
 
 module.exports = router;

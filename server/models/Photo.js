@@ -7,7 +7,11 @@ var photoSchema = new Schema({
   like: [{
     type: Schema.ObjectId,
     ref: 'User'
-  }]
+  }],
+  user: {
+    type: Schema.ObjectId,
+    ref: 'User'
+  }
 });
 
 module.exports = mongoose.model('Photo', photoSchema);
