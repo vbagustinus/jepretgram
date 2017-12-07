@@ -4,7 +4,8 @@ import axios from 'axios'
 import router from '../router'
 
 const http = axios.create(({
-  baseURL: 'http://localhost:3000'
+  // baseURL: 'http://localhost:3000'
+  baseURL: 'http://35.196.106.22'
 }))
 
 Vue.use(Vuex)
