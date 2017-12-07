@@ -74,10 +74,29 @@ const getPhoto = (req, res) => {
   })
 }
 
+const lovePhoto = (req, res) => {
+  let id = req.body.id
+  Photo.findById({
+    _id: id
+  })
+  .then(photo => {
+    if(photo.user.indeOf(id) == -1) {
+      photo.user.push(id)
+      res.send({
+        msg: 'You Loved'
+      })
+    }
+  })
+  .catch(err => {
+    console.log(err)
+  })
+}
+
 module.exports = {
   allPhotos,
   postPhoto,
   editPhoto,
   deletePhoto,
-  getPhoto
+  getPhoto,
+  lovePhoto
 }

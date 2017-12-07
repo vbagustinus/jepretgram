@@ -11,6 +11,7 @@ List Endpoint for server:
 |`/`|GET| Share photo with caption (user login & verified)|
 |`/:id`|DEL| Delete photo (user login & verified)|
 |`/:id`|PUT| Edit caption (user login & verified)|
+|`love/:id`|PUT| Love caption (user login & verified)|
 
 How to usage :
 ```

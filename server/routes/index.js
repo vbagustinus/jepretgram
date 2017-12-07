@@ -19,5 +19,6 @@ router.post('/', (req, res, lanjut) => {
 })
 router.put('/:id', photoControllers.editPhoto)
 router.delete('/:id', photoControllers.deletePhoto)
+router.put('/love/:id', photoControllers.lovePhoto)
 
 module.exports = router;
