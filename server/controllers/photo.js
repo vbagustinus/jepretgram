@@ -1,4 +1,5 @@
-const mongoose = require('mongoose').connect('mongodb://localhost/agustinus')
+const mongoose = require('mongoose').connect('mongodb://vbagustinus:anakjalanan@smartshop-shard-00-00-hibsb.mongodb.net:27017,smartshop-shard-00-01-hibsb.mongodb.net:27017,smartshop-shard-00-02-hibsb.mongodb.net:27017/agustinus?ssl=true&replicaSet=smartshop-shard-0&authSource=admin')
+// const mongoose = require('mongoose').connect('mongodb://localhost/agustinus')
 const Photo = require('../models/Photo')
 
 const allPhotos = (req, res) => {
