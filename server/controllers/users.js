@@ -67,7 +67,10 @@ const checkLogin = (req, res) => {
           'inisercetyaaa', 
           (err, token) => {
             if(!err) {
-              res.send({token: token})
+              res.send({
+                token: token,
+                user_id: user._id
+              })
             } else {
               console.log(err)
             }

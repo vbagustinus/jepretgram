@@ -16,8 +16,14 @@
           <a class="navbar-item" >
             <router-link to="/">Home</router-link>
           </a>
-          <a class="navbar-item" href="https://bulma.io/">
+           <a class="navbar-item">
+             <router-link to="/add">Add Caption</router-link>
+          </a>
+          <a class="navbar-item">
              <router-link to="/login">Login</router-link>
+          </a>
+          <a class="navbar-item">
+             <router-link to="/register">Register</router-link>
           </a>
         </div>
       </div>

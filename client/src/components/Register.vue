@@ -1,14 +1,19 @@
 <template>
   <div>
-    <form @submit.prevent="checkLogin(masuk)">
+    <form @submit.prevent="addRegister(daftar)">
+      <label class="label">Name</label>
+        <p class="control has-icon has-icon-right">
+          <input class="input is-success" type="text" v-model="daftar.name" placeholder="Text input" value="bulma">
+          <i class="fa fa-check"></i>
+        </p>
         <label class="label">Username</label>
         <p class="control has-icon has-icon-right">
-          <input class="input is-success" type="text" v-model="masuk.username" placeholder="Text input" value="bulma">
+          <input class="input is-success" type="text" v-model="daftar.username" placeholder="Text input" value="bulma">
           <i class="fa fa-check"></i>
         </p>
         <label class="label">Pasword</label>
         <p class="control has-icon has-icon-right">
-          <input class="input is-success" type="password" v-model="masuk.password" placeholder="Text input" value="bulma">
+          <input class="input is-success" type="password" v-model="daftar.password" placeholder="Text input" value="bulma">
           <i class="fa fa-check"></i>
         </p>
         <p class="control">
@@ -25,7 +30,8 @@ export default {
   name: 'Login',
   data () {
     return {
-      masuk: {
+      daftar: {
+        name: '',
         username: '',
         password: ''
       }
@@ -33,7 +39,7 @@ export default {
   },
   methods: {
     ...mapActions([
-      'checkLogin'
+      'addRegister'
     ])
   }
 }

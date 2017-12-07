@@ -14,17 +14,20 @@ const allPhotos = (req, res) => {
 
 const postPhoto = (req, res) => {
   let input = req.body
+  console.log('ke CREATE ga NIH', req.file)
   addPhoto = new Photo({
     caption: input.caption,
     url: req.file.cloudStoragePublicUrl,
-    user: []
+    user: input.user_id
   })
-  addPhoto.save((err) => {
+  addPhoto.save((err, data) => {
     if(!err) {
       res.send({
-        msg: 'Post great for created'
+        msg: 'Post great for created',
+        data: data
       })
     }
+    console.log(err)
   })
 }
 
