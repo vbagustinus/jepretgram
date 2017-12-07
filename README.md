@@ -9,6 +9,7 @@ List Endpoint for server:
 | `/register`    |POST           | Register user|
 | `/`            |POST | Display all photos|
 |`/`|GET| Share photo with caption (user login & verified)|
+|`/:id`|GET| Get a photo (user login & verified)|
 |`/:id`|DEL| Delete photo (user login & verified)|
 |`/:id`|PUT| Edit caption (user login & verified)|
 |`love/:id`|PUT| Love caption (user login & verified)|
